@@ -32,7 +32,7 @@ const Chatpage = () => {
 
 
     useEffect(() => {
-        socket = io.connect('https://wechatbackend-1o9t.onrender.com');
+        socket = io.connect("https://wechatbackend-4sd2.onrender.com/");
 
         socket.on('connect', () => {
             console.log("Connected to the server and is running")
@@ -66,6 +66,9 @@ const Chatpage = () => {
         })
 
         return () => {
+             if (socket.readyState === 1) { // <-- This is important
+                socket.close();
+            }
             socket.on('disconnect');
             socket.off();
         }
