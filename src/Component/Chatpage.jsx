@@ -145,7 +145,7 @@ const Chatpage = () => {
                                 return (
                                     <>
                                         <ol className="ollist">
-                                            <li key={currval.id}>{currval.username}</li>
+                                            <li key={currval.key}>{currval.username}</li>
                                         </ol>
                                     </>
                                 )
